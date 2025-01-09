@@ -1,18 +1,20 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = htmlspecialchars($_POST['comment-name']);
     $comment = htmlspecialchars($_POST['comment-text']);
-    $date = date("Y-m-d H:i:s");
+    $date = date('Y-m-d H:i:s');
 
-    $commentData = "Name: $name\nDate: $date\nComment: $comment\n\n";
-    $filePath = "comments/" . time() . ".txt";
+    // Save the comment to a file or database
+    // For simplicity, we'll save it to a file
+    $commentData = "Name: $name\nComment: $comment\nDate: $date\n\n";
+    file_put_contents('comments.txt', $commentData, FILE_APPEND);
 
-    if (!file_exists('comments')) {
-        mkdir('comments', 0777, true);
-    }
-
-    file_put_contents($filePath, $commentData);
-    header("Location: blog.html");
+    // Redirect back to the blog page
+    header('Location: blog.html');
     exit();
+} else {
+    // Method not allowed
+    http_response_code(405);
+    echo "Method Not Allowed";
 }
 ?>
