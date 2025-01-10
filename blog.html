@@ -254,6 +254,27 @@
 
 <!-- Loading Progress Bar -->
 <div class="progress-bar blue"></div>
+
+<!-- Ensure scripts are loaded at the end of the body for better performance -->
+<script src="js/main.js"></script>
+<script>
+  $(document).ready(function() {
+    // Initialize slides
+    $('.slides').slidesjs({
+      width: 940,
+      height: 528,
+      navigation: false,
+      play: {
+        active: true,
+        auto: true,
+        interval: 4000,
+        swap: true
+      }
+    });
+
+    // Add any additional initialization code here
+  });
+</script>
 		
 </body>
 </html>
