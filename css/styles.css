@@ -7,4 +7,7 @@
     .Blog-Description {
         animation: none;
     }
+    .Sidebar {
+        display: block;
+    }
 }
