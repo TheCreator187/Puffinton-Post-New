@@ -1,6 +1,21 @@
 .Blog-Description {
     color: rgb(18, 163, 74);
     font-family: monospace;
-    
-
 }
+
+@media (max-width: 768px) {
+    .Blog-Description {
+        animation: slideDown 0.5s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}arusersarusers
