@@ -12,4 +12,13 @@
     .Sidebar {
         display: block;
     }
+    .slides.desktopSwipe {
+        cursor: -webkit-grab;
+    }
+    .slides.desktopSwipe:active {
+        cursor: -webkit-grabbing;
+    }
+    .slides.desktopSwipe .slide .container .wrap {
+        cursor: inherit;
+    }
 }
