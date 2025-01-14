@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Save the comment to a file or database
     // For simplicity, we'll save it to a file
     $commentData = "Name: $name\nComment: $comment\nDate: $date\n\n";
-    file_put_contents('comments.txt', $commentData, FILE_APPEND);
+    file_put_contents('comments.txt', $commentData, FILE_APPEND | LOCK_EX);
 
     // Redirect back to the blog page
     header('Location: blog.html');
