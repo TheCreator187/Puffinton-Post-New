@@ -38,6 +38,53 @@
     .tight-line-height {
       line-height: 1.2;
     }
+    .slide .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .slide .wrap {
+      text-align: center;
+    }
+
+    .slide .wrap img {
+      max-width: 50%;
+      height: auto;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      background: url('/assets/img/image-899-1.jpg') no-repeat center center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      .slide .wrap img {
+        max-width: 100%;
+      }
+
+      .hero {
+        height: 300px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+    }
   </style>
 </head>
 <body class="slides chain simplifiedMobile animated">
@@ -173,137 +220,6 @@
   <div class="content">
     <div class="container">
       <div class="wrap">
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Arial', sans-serif;
-            }
-    
-            body {
-                background-color: #f4f4f4;
-                color: #333;
-            }
-    
-
-    
-            .hero {
-                height: 400px;
-                background: url('/assets/img/image-899-1.jpg') no-repeat center center;
-                background-size: cover;
-                position: relative;
-            }
-    
-            .hero h1 {
-                position: absolute;
-                bottom: 50px;
-                left: 20px;
-                color: #fff;
-                font-size: 48px;
-                font-weight: bold;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            }
-    
-            .news-section {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                padding: 40px 20px;
-            }
-    
-            .news-item {
-                width: 30%;
-                background-color: #fff;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                margin-bottom: 50px;
-                border-radius: 90px;
-                overflow: hidden;
-                transition: transform 0.3s ease;
-            }
-    
-            .news-item:hover {
-                transform: scale(1.05);
-            }
-    
-            .news-item img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-            }
-    
-            .news-item h3 {
-                margin: 15px;
-                font-size: 22px;
-                color: #333;
-            }
-    
-            .news-item p {
-                margin: 0 15px 15px;
-                color: #777;
-            }
-    
-     
-    
-            /* Mobile Styles */
-            @media (max-width: 768px) {
-            
-    
-                .hero {
-                    height: 300px;
-                }
-    
-                .hero h1 {
-                    font-size: 36px;
-                    bottom: 30px;
-                    left: 20px;
-                }
-    
-                .news-section {
-                    flex-direction: column;
-                    align-items: center;
-                }
-    
-                .news-item {
-                    width: 90%;
-                }
-    
-                .news-item h3 {
-                    font-size: 20px;
-                }
-    
-                .news-item p {
-                    font-size: 14px;
-                }
-    
-                footer {
-                    font-size: 14px;
-                }
-            }
-    
-            /* Very Small Devices */
-            @media (max-width: 480px) {
-                header {
-                    font-size: 18px;
-                }
-    
-                .hero h1 {
-                    font-size: 28px;
-                }
-    
-                .news-item h3 {
-                    font-size: 18px;
-                }
-    
-                .news-item p {
-                    font-size: 12px;
-                }
-    
-              
-            }
-        </style>
-
-    
         <section class="hero">
           <h1>Today is<br> <span id="current-date"></span></h1>
 
@@ -324,20 +240,9 @@
               
               // Display the formatted date in the span with id 'current-date'
               document.getElementById('current-date').textContent = formatDate(currentDate);
-          </script>        </section>
-
-          <img src="/assets/img/weed.gif" alt="News Image" style="width:100%; height: auto;">
-    
-
-    
-   
-    
-    </body>
-    </html>
-        
-        
-        
-
+          </script>
+        </section>
+        <img src="/assets/img/weed.gif" alt="News Image" class="desktop-only">
         <div class="fix-12-12">
           <div class="fix-3-12">
           </div>
@@ -480,7 +385,7 @@
           <img src="/assets/img/phone.png" alt="Phone" class="ae-3 margin-bottom-2">
           
           <h1 class="ae-1">App Coming Soon</h1>
-          <p class="hero ae-2 margin-bottom-3"><span class="opacity-8">Are you Ready for the Madness ?</span></p>
+          <p class="hero ae-2 margin-bottom-3" style="font-size: 0.8em;"><span class="opacity-8">Are you Ready for the Madness ?</span></p>
         </div>
       </div>
     </div>
